@@ -1,0 +1,30 @@
+---
+- hosts:      localhost
+  connection: local
+  vars:
+    
+    homebrew_installed_packages: []
+
+    homebrew_uninstalled_packages: []
+
+    homebrew_cask_apps:
+      - 1password
+      - calibre
+      - dash
+      - dropbox
+      - evernote
+      - firefox
+      - google-chrome
+      - google-drive-file-stream
+      - imageoptim
+      - iterm2
+      - phpstorm
+      - sequel-pro
+      - skype
+      - vagrant # | https://www.vagrantup.com/downloads.html
+      - vagrant-manager # 
+      - virtualbox # | https://www.virtualbox.org/
+      - vlc 
+
+  roles:
+    - cubicmushroom.homebrew
