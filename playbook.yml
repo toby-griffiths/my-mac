@@ -38,22 +38,23 @@
 
     ### ZSH radness 
 
-    - name: Determine if zsh is default/current shell
-      shell: echo $SHELL
-      register: current_shell
+    - name:         Determine if zsh is default/current shell
+      shell:        echo ${SHELL}
+      register:     current_shell
+      changed_when: false
       tags:
         - zsh
 
     - name: Enable zsh in /etc/shells
-      shell: sudo /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
+      shell: /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
       when: current_shell.stdout != '/usr/local/bin/zsh'    
-      #" unbreak my syntax highlighting...
       tags: 
         - zsh
 
     - name: Set zsh as default shell
       shell: chsh -s {{ zsh_path }}
       when: current_shell.stdout != '/usr/local/bin/zsh'
-      sudo: true
+      register: chsh_output
       tags: 
         - zsh
+
