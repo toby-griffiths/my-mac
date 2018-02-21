@@ -4,7 +4,9 @@
   vars:
     
     homebrew_installed_packages:
+      - jq
       - zsh
+      - zsh-completions
 
     homebrew_uninstalled_packages: []
 
