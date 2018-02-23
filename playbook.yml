@@ -42,9 +42,9 @@
 
     ### ZSH radness 
 
-    - name:         Determine if zsh is default/current shell
-      shell:        echo ${SHELL}
-      register:     current_shell
+    - name: Determine if zsh is default/current shell
+      shell: echo ${SHELL}
+      register: current_shell
       changed_when: false
       tags:
         - zsh
