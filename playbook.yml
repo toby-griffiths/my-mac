@@ -62,3 +62,27 @@
       tags: 
         - zsh
 
+
+    ### Projects
+
+    - name: Directory Service API
+      git:
+        repo: git@gitlab.com:cubicmushroom/directory/directory-api
+        dest: ${HOME}/src/gitlab.com/cubicmushroom/directory/directory-api
+        key_file: ${HOME}/.ssh/id_rsa
+        accept_hostkey: yes
+        ssh_opts: -o StrictHostKeyChecking=no
+      tags:
+        - projects
+        - projects:driectory
+
+    - name: Directory Service font-end
+      git:
+        repo: git@gitlab.com:cubicmushroom/directory/react-front-end
+        dest: ${HOME}/src/gitlab.com/cubicmushroom/directory/react-front-end
+        key_file: ${HOME}/.ssh/id_rsa
+        accept_hostkey: yes
+        ssh_opts: -o StrictHostKeyChecking=no
+      tags:
+        - projects
+        - projects:driectory
