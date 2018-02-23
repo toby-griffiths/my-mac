@@ -63,6 +63,26 @@
         - zsh
 
 
+    - name: Check if oh-my-zsh is installed
+      stat:
+        path: ${HOME}/.oh-my-zsh
+      register: omz_check
+      tags:
+        - zsh
+
+    - debug:
+        var: omz_check
+      tags: [zsh]
+
+    - name: Install oh-my-zsh
+      git:
+        repo: git://github.com/robbyrussell/oh-my-zsh.git
+        dest: ~/.oh-my-zsh
+      when: omz_check.stat.exists == false
+      tags:
+        - zsh
+
+
     ### Projects
 
     - name: Directory Service API
