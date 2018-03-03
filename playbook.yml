@@ -3,6 +3,8 @@
   connection: local
   vars:
     
+    repo_path: ~/.my-mac
+
     homebrew_installed_packages:
       - jq
       - node
@@ -64,6 +66,15 @@
       tags: 
         - zsh
 
+    - name: Symlink .zshrc
+      file:
+        state: link
+        src: "{{ repo_path }}/dotfiles/.zshrc"
+        dest: ${HOME}/.zshrc
+      tags:
+        - zsh
+
+    ### Oh my Zsh
 
     - name: Check if oh-my-zsh is installed
       stat:
@@ -71,10 +82,7 @@
       register: omz_check
       tags:
         - zsh
-
-    - debug:
-        var: omz_check
-      tags: [zsh]
+        - oh-my-zsh
 
     - name: Install oh-my-zsh
       git:
