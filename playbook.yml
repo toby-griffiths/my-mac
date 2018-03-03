@@ -83,6 +83,72 @@
       when: omz_check.stat.exists == false
       tags:
         - zsh
+        - oh-my-zsh
+
+    ### Desktop & workpaces
+
+    - name: Don’t automatically rearrange Spaces based on most recent use
+      osx_defaults:
+        domain: com.apple.dock
+        key: mru-spaces
+        type: bool
+        value: false
+        state: present
+      tags:
+        - osx
+        - desktop
+        - workspaces
+
+
+    ### Keyboard tweaks
+
+    - name: Enable F keys without need for Fn key
+      osx_defaults:
+        domain: Apple Global Domain
+        key: com.apple.keyboard.fnState
+        type: bool
+        value: true
+        state: present
+      tags:
+        - osx
+        - keyboard
+
+
+    ### Mouse/Trackpad tweaks
+
+    - name: Enable tap to click for mightymouse
+      osx_defaults:
+        domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+        key: Clicking
+        state: present
+        type: int
+        value: 1
+      tags:
+        - osx
+        - mouse
+
+    - name: Enable tap to click for trackpad
+      osx_defaults:
+        domain: NSGlobalDomain
+        host: currentHost
+        key: com.apple.mouse.tapBehavior
+        state: present
+        type: int
+        value: 1
+      tags:
+        - osx
+        - trackpad
+
+    - name: Enable tap to click o boot screen
+      osx_defaults:
+        domain: NSGlobalDomain
+        key: com.apple.mouse.tapBehavior
+        state: present
+        type: int
+        value: 1
+      tags:
+        - osx
+        - trackpad
 
 
     ### Projects
