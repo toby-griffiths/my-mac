@@ -6,6 +6,7 @@
     homebrew_installed_packages:
       - jq
       - node
+      - tmux
       - yarn
       - zsh
       - zsh-completions
