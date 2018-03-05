@@ -5,6 +5,7 @@ Setup script for my Mac.  Uses hombrew & ansible to configure (almost) all the t
 
 ## Still to do
 
+- Configure SSH-agent
 - Install App Store apps
   - Wunderlist
 - Configure Dropbox using ansible?
