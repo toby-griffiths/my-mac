@@ -9,6 +9,7 @@
       - jq
       - node
       - tmux
+      - watchman
       - yarn
       - zsh
       - zsh-completions
