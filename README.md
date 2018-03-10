@@ -5,9 +5,8 @@ Setup script for my Mac.  Uses hombrew & ansible to configure (almost) all the t
 
 ## Still to do
 
-- Configure SSH-agent
-- Install App Store apps
-  - Wunderlist
+- Setup script to auto add/remove brew packages to playbook.yml when I run brew install/brew remove
+- Install reactJS installers
 - Configure Dropbox using ansible?
 - Configure 1Password using ansible?
 - Enable Safari Developer menu
