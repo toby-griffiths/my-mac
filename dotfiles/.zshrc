@@ -92,3 +92,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+bindkey -e
+bindkey '^[^[[C' forward-word
+bindkey '^[^[[D' backward-word
